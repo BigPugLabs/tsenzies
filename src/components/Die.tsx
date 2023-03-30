@@ -4,6 +4,10 @@ type DieProps = {
 
 export default function Die(props: DieProps): JSX.Element {
     return (
-        <div>{props.number}</div>
+        <div>
+            <h2>
+                {props.number}
+            </h2>
+        </div>
     )
 }

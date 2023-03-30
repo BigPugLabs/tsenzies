@@ -1,6 +1,6 @@
 import Die from "./components/Die"
 
-function App() {
+function App(): JSX.Element {
 
     return (
         <main>
