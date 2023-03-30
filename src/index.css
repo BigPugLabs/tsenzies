@@ -43,6 +43,10 @@ main {
     text-align: center;
 }
 
+.die--tray .held {
+    background: #59E391;
+}
+
 .roll {
     background: #5035FF;
     border-radius: 4px;

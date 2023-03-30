@@ -4,16 +4,18 @@ import Die, { DieProps } from "./components/Die"
 
 function App(): JSX.Element {
 
-    function genDice(): DieProps[] {
+    function genDice(): { id: string; props: DieProps }[] {
         return Array.from({ length: 10 }, () => ({
             id: nanoid(),
-            isHeld: false,
-            value: Math.ceil(Math.random() * 6),
+            props: {
+                isHeld: false,
+                value: Math.ceil(Math.random() * 6)
+            },
         }))
     }
 
     const [dice, setDice] = useState(genDice)
-    const diceElems = dice.map(die => <Die key={die.id} {...die} />)
+    const diceElems = dice.map(die => <Die key={die.id} {...die.props} />)
 
     function roll() {
         setDice(genDice())
