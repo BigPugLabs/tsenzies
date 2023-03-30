@@ -1,14 +1,19 @@
+import { nanoid } from "nanoid"
 import { useState } from "react"
 import Die, { DieProps } from "./components/Die"
 
 function App(): JSX.Element {
 
     function genDice(): DieProps[] {
-        return Array.from({ length: 10 }, () => ({ value: Math.ceil(Math.random() * 6), isHeld: false }))
+        return Array.from({ length: 10 }, () => ({
+            id: nanoid(),
+            isHeld: false,
+            value: Math.ceil(Math.random() * 6),
+        }))
     }
 
     const [dice, setDice] = useState(genDice)
-    const diceElems = dice.map(die => <Die {...die} />)
+    const diceElems = dice.map(die => <Die key={die.id} {...die} />)
 
     function roll() {
         setDice(genDice())

@@ -1,6 +1,7 @@
 export type DieProps = {
-    value: number;
+    id: string;
     isHeld: boolean;
+    value: number;
 }
 
 export default function Die(props: DieProps): JSX.Element {
