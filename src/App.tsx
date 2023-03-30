@@ -1,8 +1,22 @@
+import Die from "./components/Die"
 
 function App() {
 
     return (
-        <main>yo</main>
+        <main>
+            <div className="die--tray">
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+                <Die number={Math.floor(Math.random() * 6) + 1} />
+            </div>
+        </main>
     )
 }
 
