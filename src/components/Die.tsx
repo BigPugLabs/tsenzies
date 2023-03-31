@@ -1,14 +1,16 @@
 export type DieProps = {
+    holdFn: (id: string) => void;
+    id: string;
     isHeld: boolean;
     value: number;
 }
 
 export default function Die(props: DieProps): JSX.Element {
     return (
-        <div className={props.isHeld ? "held" : ""}>
+        <div className={props.isHeld ? "held" : ""} onClick={() => props.holdFn(props.id)} >
             <h2>
                 {props.value}
             </h2>
-        </div>
+        </ div>
     )
 }
