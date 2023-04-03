@@ -1,13 +1,13 @@
 import { nanoid } from "nanoid"
 import { useState } from "react"
-import Die, { DieProps } from "./components/Die"
+import Die from "./components/Die"
 
-function App(): JSX.Element {
+function App() {
 
-    function genDice(): DieProps[] {
+    function genDice() {
         return Array.from({ length: 10 }, () => ({
-            id: nanoid(),
             holdFn: hold,
+            id: nanoid(),
             isHeld: false,
             value: Math.ceil(Math.random() * 6)
         }))
@@ -17,7 +17,6 @@ function App(): JSX.Element {
     const diceElems = dice.map(die => <Die key={die.id} {...die} />)
 
     function roll(): void {
-        //setDice(genDice())
         setDice(dice => dice.map(die => (die.isHeld ? die : { ...die, value: Math.ceil(Math.random() * 6) })))
     }
 

@@ -1,11 +1,11 @@
-export type DieProps = {
+type DieProps = {
     holdFn: (id: string) => void;
     id: string;
     isHeld: boolean;
     value: number;
 }
 
-export default function Die(props: DieProps): JSX.Element {
+export default function Die(props: DieProps) {
     return (
         <div className={props.isHeld ? "held" : ""} onClick={() => props.holdFn(props.id)} >
             <h2>
