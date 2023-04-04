@@ -61,7 +61,7 @@ main {
     cursor: pointer;
     font: 700 1.5rem 'Karla', sans-serif;
     height: 40px;
-    width: 120px;
+    padding: 0 1rem;
 }
 
 .roll:active {
